@@ -4,31 +4,30 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇸🇨 SC 01 - xiaohe
+- name: 🇦🇺 澳大利亚 (Australia) 01 - xiaohe
   type: vless
-  server: 154.211.8.227
-  port: 2087
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  server: forwarded.frnhk.xyz
+  port: 46004
+  uuid: 3c5f522d-6695-474f-abcf-2b1a65d503fa
   udp: true
-  tls: true
+  tls: false
   skip-cert-verify: true
-  servername: proxy-34l.pages.dev
   network: ws
   ws-opts:
-    path: /
+    path: /aus1023
     headers:
-      Host: proxy-34l.pages.dev
+      Host: forwarded.frnhk.xyz
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇸🇨 SC 01 - xiaohe
+  - 🇦🇺 澳大利亚 (Australia) 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
-  - 🇸🇨 SC 01 - xiaohe
+  - 🇦🇺 澳大利亚 (Australia) 01 - xiaohe
 rules:
 - MATCH,PROXIES
