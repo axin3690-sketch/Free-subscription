@@ -4,11 +4,11 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇸🇨 SC 01 - xiaohe
+- name: 🇰🇿 KZ 01 - xiaohe
   type: vmess
-  server: 156.239.224.107
-  port: 57278
-  uuid: 1270bed5-f908-4ecc-f1c8-de246033b186
+  server: 38.107.234.57
+  port: 80
+  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
   alterId: 0
   cipher: auto
   udp: true
@@ -16,36 +16,36 @@ proxies:
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /
+    path: /vmess/
     headers:
-      Host: ''
-- name: 🇸🇨 SC 02 - xiaohe
+      Host: 38.107.234.57
+- name: 🇰🇿 KZ 02 - xiaohe
   type: vless
-  server: 154.211.8.227
-  port: 2087
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  server: 3h-kazakhstan1.09vpn.com
+  port: 8443
+  uuid: 2424febb-43cb-488d-bdd1-401e923c8e48
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: proxy-34l.pages.dev
+  servername: 3h-kazakhstan1.09vpn.com
   network: ws
   ws-opts:
-    path: /
+    path: /vless/
     headers:
-      Host: proxy-34l.pages.dev
+      Host: 3h-kazakhstan1.09vpn.com
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇸🇨 SC 01 - xiaohe
-  - 🇸🇨 SC 02 - xiaohe
+  - 🇰🇿 KZ 01 - xiaohe
+  - 🇰🇿 KZ 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
-  - 🇸🇨 SC 01 - xiaohe
-  - 🇸🇨 SC 02 - xiaohe
+  - 🇰🇿 KZ 01 - xiaohe
+  - 🇰🇿 KZ 02 - xiaohe
 rules:
 - MATCH,PROXIES
