@@ -6,16 +6,18 @@ log-level: info
 proxies:
 - name: 🇵🇱 PL 01 - xiaohe
   type: vless
-  server: 143.246.41.214
+  server: 193.233.219.98
   port: 443
-  uuid: be146d46-ae50-4691-838c-b6c87dbaec8f
+  uuid: 265ecca2-4733-49de-b2c9-ed7f0e999655
   udp: true
   tls: true
   skip-cert-verify: true
-  reality-opts:
-    public-key: 8OI8rEgAiWxH-cG03xgzuz7XTFHrbA1MY9HnPHcgSUA
-  servername: 702e56t.pl5.h1clayd.click
-  client-fingerprint: edge
+  servername: daily-author.ru
+  network: ws
+  ws-opts:
+    path: /api/vless
+    headers:
+      Host: vpn-rating.space
 proxy-groups:
 - name: PROXIES
   type: select
